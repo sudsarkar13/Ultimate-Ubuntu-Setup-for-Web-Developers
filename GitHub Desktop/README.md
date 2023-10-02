@@ -30,3 +30,9 @@ Available for Debian and Ubuntu
 ```sh
 git clone https://github.com/sudsarkar13/Ultimate-Ubuntu-Setup-for-Web-Developers.git
 ```
+
+### Maintained By
+[Brendan Forster aka shiftkey](https://github.com/shiftkey)
+- 😄 Pronouns: He/Him
+
+[Github Desktop](https://github.com/shiftkey/desktop)
