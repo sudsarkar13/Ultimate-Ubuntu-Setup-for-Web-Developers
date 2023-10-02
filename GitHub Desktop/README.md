@@ -20,8 +20,7 @@ uses [React](https://reactjs.org/).
 
 ## What is this repository for?
 
-This repository contains specific patches on top of the upstream
-`desktop/desktop` repository to support Linux usage.
+This repository contains installation script of `GitHub Desktop` repository to support Linux usage.
 
 ## Installation for Debian/Ubuntu
 
