@@ -58,6 +58,9 @@ echo
 cd ..
 echo
 sleep 5
+# Fix any dependency issues
+sudo apt --fix-broken install -y
+echo
 echo "Final Checking..."
 sudo apt update
 sudo apt upgrade -y
