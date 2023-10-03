@@ -63,6 +63,9 @@ sudo gdebi GitHubDesktop-linux-amd64-3.3.1-linux1.deb
 echo
 echo "Installation Succesfull"
 echo
+# Fix any dependency issues
+sudo apt --fix-broken install -y
+echo
 echo "Checking Ubuntu updates & Closing..."
 sudo apt update
 sudo apt upgrade -y
