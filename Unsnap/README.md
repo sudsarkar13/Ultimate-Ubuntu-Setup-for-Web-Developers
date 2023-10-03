@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src=".github/logo.png" alt="unsnap" width="256" />
+  <img src="https://github.com/sudsarkar13/unsnap#------unsnap" alt="unsnap" width="256" />
   <br />
   unsnap
 </h1>
