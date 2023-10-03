@@ -32,6 +32,7 @@ echo "Starting the setup..."
 break
 elif [[ "$U_Input" == "N" ]]; then
 echo "Exiting the setup in 10 seconds... "
+sleep 1
 for i in {9..1}; do
 echo -n -e "\rRemaining time: $i"
 done
@@ -52,23 +53,21 @@ By using this command, Ubuntu will read the hardware clock as if it's set to loc
 echo
 sudo timedatectl set-local-rtc 1
 sudo timedatectl set-ntp true
-
-
+echo
 # Checks for updates available & upgrades the packages required. 
 sudo apt update
 sudo apt upgrade -y
-
+echo
 # Checks for missing packages required for ubuntu oem or normal installation missed due bad connection or gateway.
 sudo apt-get install apt-file -y
 sudo apt-file update
-
+echo
 # Enables application icon minimize feature on Dock.
 echo "Installing minimize-from-icon feature...."
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
-
 # To undo the action
 # gsettings reset org.gnome.shell.extensions.dash-to-dock click-action
-
+echo
 # Installing Google Chrome
 echo "Getting google-chrome.deb package file..."
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -89,17 +88,6 @@ echo "Installing Flatpak..."
 sudo apt install flatpak -y
 # Adding flathub repository
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-echo
-# Adding unsnap (Quickly migrate from using snap packages to flatpaks)
-echo "Quickly and easily migrate from using snap for applications to flatpak. unsnap runs as a two-stage process. unsnap itself generates the scripts to do the actual migration. This enables users to view and/or edit the scripts prior to execution to validate or tweak them."
-echo "Cloning unsnap using git..."
-git clone https://github.com/popey/unsnap
-cd unsnap
-./unsnap
-echo
-./unsnap auto
-echo
-cd ..
 echo
 # Preload
 echo "Installs Preload: The preload package in Ubuntu is a daemon that runs in the background and analyzes user behavior to predict which applications you might use next. It then preloads those applications and their dependencies into memory, speeding up their startup times."
