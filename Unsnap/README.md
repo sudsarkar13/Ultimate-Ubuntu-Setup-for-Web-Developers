@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://github.com/sudsarkar13/unsnap#------unsnap" alt="unsnap" width="256" />
+  <img src=".github/logo.png" alt="unsnap" width="256" />
   <br />
   unsnap
 </h1>
@@ -68,3 +68,10 @@ It's (currently) left as an exercise for the user, to actually *restore* the dat
 ## Logging
 
 unsnap writes to the console, and to a log file called `unsnap.log` in `./log-YYYY-MM-DD.HH.MM.SS` beneath the current directory.
+
+## Maintained by
+[Alan Pope aka popey](https://github.com/popey)
+[unsnap](https://github.com/popey/unsnap)
+
+### Repo Updater
+[Sudeepta Sarkar aka sudsarkar13](https://github.com/sudsarkar13)
