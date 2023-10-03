@@ -35,3 +35,7 @@ git clone https://github.com/sudsarkar13/Ultimate-Ubuntu-Setup-for-Web-Developer
 - 😄 Pronouns: He/Him
 
 [Github Desktop](https://github.com/shiftkey/desktop)
+
+### Repo Updater
+[Sudeepta Sarkar aka sudsarkar13](https://github.com/sudsarkar13)
+- 😄 Pronouns: He/Him
