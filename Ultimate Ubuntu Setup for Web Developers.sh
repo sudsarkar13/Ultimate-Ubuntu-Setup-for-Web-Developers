@@ -46,6 +46,17 @@ done
 
 # Installation Procedure beginning from here onwards.
 
+# Nala for all
+echo "Nala is a front-end for libapt-pkg. Specifically we interface using the python-apt api."
+echo
+echo "Starting nala installation"
+sudo apt install nala
+echo
+echo "Installation Complete"
+echo "Verifying installation..."
+sudo nala --version
+echo "Verification complete"
+echo
 # Fix time operations if windows dual boot found
 echo "The sudo timedatectl set-local-rtc 1 command sets the hardware clock (RTC - Real Time Clock) to use local time instead of UTC (Coordinated Universal Time). This is typically necessary in a dual-boot system with Windows and Ubuntu, where Windows usually sets the hardware clock to local time.
 
