@@ -23,7 +23,13 @@ show specifically what will happen with a package during install, removal, or an
 # Installation
 ==============
 
-For installation instructions see our `wiki page <https://gitlab.com/volian/nala/-/wikis/Installation>`_.
+## Debian Testing/Sid
+
+Nala is officially in the testing and sid repos.
+```
+sudo apt install nala
+```
+
 
 # Parallel Downloads
 ====================
