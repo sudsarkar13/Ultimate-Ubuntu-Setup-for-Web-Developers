@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export PYBUILD_NAME = nala
+export DH_VERBOSE = 1
+%:
+	dh $@ --buildsystem=pybuild
+
+execute_before_dh_installman:
+	python3 nala_build.py man
+
+execute_before_dh_auto_install:
+	python3 nala_build.py babel --compile
