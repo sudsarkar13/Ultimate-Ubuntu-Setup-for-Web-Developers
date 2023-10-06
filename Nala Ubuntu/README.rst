@@ -95,14 +95,14 @@ https://liberapay.com/Volian-Linux
 # Images
 ========
 
-.. image:: /imgs/nala-install-1.png
-.. image:: /imgs/nala-install-2.png
+.. image:: ./imgs/nala-install-1.png
+.. image:: ./imgs/nala-install-2.png
 
-.. image:: /imgs/nala-fetch.png
+.. image:: ./imgs/nala-fetch.png
 
-.. image:: /imgs/nala-history-info.png
-.. image:: /imgs/nala-history-undo-1.png
-.. image:: /imgs/nala-history-undo-2.png
+.. image:: ./imgs/nala-history-info.png
+.. image:: ./imgs/nala-history-undo-1.png
+.. image:: ./imgs/nala-history-undo-2.png
 
-.. image:: /imgs/nala-update.png
-.. image:: /imgs/nala-show-apt.png
+.. image:: ./imgs/nala-update.png
+.. image:: ./imgs/nala-show-apt.png
