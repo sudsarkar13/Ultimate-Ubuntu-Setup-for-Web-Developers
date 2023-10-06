@@ -124,18 +124,40 @@ echo
 sleep 5
 sudo apt update
 # Install Git
+echo
+echo "We are installing git shortly..."
 sudo apt install git -y
 # Display Git version
 git --version
 echo
 # Grub Customizer installation
+echo "Installing grub customizer..."
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 sudo apt install grub-customizer -y
 echo
 # Installing TimeShift
+echo "Installing grub customizer..."
 sudo apt install timeshift -y
 echo
 # Installing Stacer
+echo "Installing stacer..."
 sudo apt install stacer -y
 echo
 
+
+# Final Check
+echo "Save and close other apps that you are using now, we will check for updates, fix installations"
+echo
+echo "We will start updating in 30 seconds..."
+sleep 30
+sudo apt update
+sudo apt-file update
+sudo apt list --upgradable
+sudo apt upgrade -y
+echo
+echo "Fixing Installations..."
+sudo apt --fix-broken install -y
+echo
+echo "Rebooting Ubuntu in 1 min..."
+sleep 60
+sudo reboot
