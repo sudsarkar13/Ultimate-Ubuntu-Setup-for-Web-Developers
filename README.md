@@ -27,6 +27,11 @@ We are here to discuss about the packages and tools that are in the script.
 8. Added `timeshift` for easier backups of your system if anything goes wrong.
 9. Added `Stacer` a similar tool like `ccleaner` in windows.
 
+### Steps to run the script:
+Follow the steps below for getting essentials for your Ubuntu System
+1. Run the default `Flatpak Installer` script.
+2. Then, run `Unsnap` script for conversion of snaps into flatpaks.
+
 ## Other Packages in this repositoty
 ### About the packages:
 
