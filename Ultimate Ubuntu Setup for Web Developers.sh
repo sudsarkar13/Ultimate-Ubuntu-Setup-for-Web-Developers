@@ -46,17 +46,6 @@ done
 
 # Installation Procedure beginning from here onwards.
 
-# Nala for all
-echo "Nala is a front-end for libapt-pkg. Specifically we interface using the python-apt api."
-echo
-echo "Starting nala installation"
-sudo apt install nala
-echo
-echo "Installation Complete"
-echo "Verifying installation..."
-sudo nala --version
-echo "Verification complete"
-echo
 # Fix time operations if windows dual boot found
 echo "The sudo timedatectl set-local-rtc 1 command sets the hardware clock (RTC - Real Time Clock) to use local time instead of UTC (Coordinated Universal Time). This is typically necessary in a dual-boot system with Windows and Ubuntu, where Windows usually sets the hardware clock to local time.
 
@@ -80,8 +69,15 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 # gsettings reset org.gnome.shell.extensions.dash-to-dock click-action
 echo
 # Installing Google Chrome
+if ! command -v google-chrome &> /dev/null; then
+echo "Google Chrome is not installed. Proceeding with installation..."
+# Check if Google Chrome deb file is downloaded
+if [ ! -f google-chrome-stable_current_amd64.deb ]; then
 echo "Getting google-chrome.deb package file..."
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+else
+echo "Google Chrome deb package already downloaded."
+fi
 echo "Installing Google Chrome..."
 # Install dependencies
 sudo apt update
@@ -91,14 +87,11 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 # Fix any dependency issues
 sudo apt --fix-broken install -y
 echo "Google Chrome installation completed."
-sudo apt autoremove
-echo
-# Installing flatpak
-sudo apt update
-echo "Installing Flatpak..."
-sudo apt install flatpak -y
-# Adding flathub repository
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# Clean up
+sudo apt autoremove -y
+else
+echo "Google Chrome is already installed. Skipping installation."
+fi
 echo
 # Preload
 echo "Installs Preload: The preload package in Ubuntu is a daemon that runs in the background and analyzes user behavior to predict which applications you might use next. It then preloads those applications and their dependencies into memory, speeding up their startup times."
