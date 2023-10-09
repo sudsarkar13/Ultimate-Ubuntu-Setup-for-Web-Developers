@@ -147,6 +147,9 @@ echo
 echo "Installing stacer..."
 sudo apt install stacer -y
 echo
+# Flatpak Extension Manager Installation
+flatpak install flathub com.mattjakeman.ExtensionManager
+# 
 
 
 # Final Check
