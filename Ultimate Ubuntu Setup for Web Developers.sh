@@ -12,8 +12,7 @@ echo "Setup tested on Ubuntu 22.04.3 LTS Release: 22.04 Codename: jammy and as w
 sleep 2
 
 # Welcome to the Ultimate Ubuntu setup.
-echo -n "Enter your name: "
-read Your_Name
+Your_Name=$(getent passwd $(whoami) | cut -d ':' -f 5 | cut -d ',' -f 1)  # Get the full name of the current user
 echo "Welcome to the Ultimate Ubuntu setup \"$Your_Name\""
 echo "To continue with the setup you need a high-speed internet connection"
 while true; do 

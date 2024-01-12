@@ -26,6 +26,7 @@ We are here to discuss about the packages and tools that are in the script.
 7. Added `Grub-Customizer` for customizing the grub bootloader menu according to your own personal requirements.
 8. Added `timeshift` for easier backups of your system if anything goes wrong.
 9. Added `Stacer` a similar tool like `ccleaner` in windows.
+10. Added `Node.js` installer and controller `nvm v0.39.7`.
 
 ### Steps to run the script:
 Follow the steps below for getting essentials for your Ubuntu System
