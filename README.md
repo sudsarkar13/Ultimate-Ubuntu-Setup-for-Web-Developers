@@ -1,8 +1,9 @@
+[![built with Codeium](https://codeium.com/badges/main)](https://codeium.com)&nbsp;&nbsp;[![Profile](https://badgen.net/static/Profile/View_Profile/049D8E)](https://codeium.com/profile/sudsarkar13)&nbsp;&nbsp;
+
 # The Ultimate setup for Ubuntu
 Added everyone's awaited , the most important journey of a developers life, an amazing script that will change every thing.
 
 ## Ultimate Ubuntu Setup for Web Developers
-[Ubuntu Setup for Web Developers](https://github.com/sudsarkar13/Ultimate-Ubuntu-Setup-for-Web-Developers/blob/main/Ultimate%20Ubuntu%20Setup%20for%20Web%20Developers.sh)
 
 ### About
 This script setup tool has various set of programs that can be useful to a web developer while switching from windows to ubuntu, very useful for beginners as well as advanced level ubuntu users.
@@ -33,8 +34,9 @@ Follow the steps below for getting essentials for your Ubuntu System
 1. Run the default `Flatpak Installer` script.
 2. Then, run `Unsnap` script for conversion of snaps into flatpaks.
 
-## Other Packages in this repositoty
+## Other Packages in this repository
 ### About the packages:
 
 1. [GitHub Desktop](https://github.com/sudsarkar13/Ultimate-Ubuntu-Setup-for-Web-Developers/tree/main/GitHub%20Desktop) is an open source Electron-based GitHub app. It is written in TypeScript and uses React.
 2. [Unsnap](https://github.com/sudsarkar13/Ultimate-Ubuntu-Setup-for-Web-Developers/tree/main/Unsnap) : Quickly and easily migrate from using snap for applications to flatpak. unsnap runs as a two-stage process. unsnap itself generates the scripts to do the actual migration. This enables users to view and/or edit the scripts prior to execution to validate or tweak them.
+3. [Node.js & nvm](https://github.com/sudsarkar13/Ultimate-Ubuntu-Setup-for-Web-Developers/tree/main/Node.js) : Installs `nvm` (Node Version Manager) which will help in intalling as well as managing the Node.js versions.
