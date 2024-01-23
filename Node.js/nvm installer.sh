@@ -43,16 +43,20 @@ done
 
 # Installation Procedure beginning from here onwards.
 
-# Checking node version manager 'nvm' is installed or not
-echo "Checking node version manager 'nvm' is installed or not..."
-if command -v nvm &> /dev/null
-then
-    echo "node version manager 'nvm' is already installed"
-    echo "Skipping node version manager 'nvm' installation"
+# Improved block to ensure nvm installation is functional
+echo "Checking if Node Version Manager (nvm) is installed..."
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+  echo "NVM is already installed. Skipping installation."
+  # Ensure the environment variables are set
+  . "$NVM_DIR/nvm.sh"
+  . "$NVM_DIR/bash_completion"
 else
-    echo "node version manager 'nvm' is not installed"
-    echo "Installing node version manager 'nvm'..."
-    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+  echo "nvm is not installed. Installing nvm..."
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+  # Define NVM_DIR and attempt to load it into the environment
+  export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.nvm}"
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 fi
 echo "Installation completed."
 sleep 5
@@ -71,3 +75,5 @@ for i in {10..1}; do
   sleep 1
 done
 echo -e "\rQuitting now..."
+gnome-terminal -- bash -c ' "Nodejs Installer.sh"; exec bash'
+exit
