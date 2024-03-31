@@ -31,7 +31,7 @@ After installing the favorite settings, you can start using them immediately. If
 
 ## Contributing
 
-Feel free to fork this repository and submit pull requests with your own favorite VSCode settings. 
+Feel free to fork this repository and submit pull requests with your own favorite VSCode settings.
 
 ## License
 
