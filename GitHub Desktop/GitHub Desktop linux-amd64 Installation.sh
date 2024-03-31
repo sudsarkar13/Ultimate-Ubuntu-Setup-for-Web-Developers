@@ -56,10 +56,10 @@ sudo gdebi --version
 echo "Installing gdebi complete"
 echo
 echo "Fetching latest release..."
-wget https://github.com/shiftkey/desktop/releases/download/release-3.3.1-linux1/GitHubDesktop-linux-amd64-3.3.1-linux1.deb
+wget https://github.com/shiftkey/desktop/releases/download/release-3.3.10-linux1/GitHubDesktop-linux-amd64-3.3.10-linux1.deb
 echo "Downloading Complete..."
 echo
-sudo gdebi GitHubDesktop-linux-amd64-3.3.1-linux1.deb
+sudo gdebi GitHubDesktop-linux-amd64-3.3.10-linux1.deb
 echo
 echo "Installation Succesfull"
 echo
