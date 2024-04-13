@@ -1,0 +1,21 @@
+echo "Lets install some dependencies"
+echo
+echo "Installing Curl"
+sudo apt-get install curl
+echo
+sleep 5
+echo "Installing gdebi"
+sudo apt-get install gdebi
+sleep 5
+echo
+echo "Installing gdebi-core"
+sudo apt-get install gdebi-core
+sleep 5
+echo
+echo "Installing python3-pip"
+sudo apt-get install python3-pip
+sleep 5
+echo 
+echo "Installing pydrive2 & google-api-python-client"
+pip install pydrive2 google-api-python-client
+
