@@ -44,5 +44,28 @@ EOF
 chmod +x ~/MacOS-Theme/installer.sh
 echo
 echo "Installation script created"
+
+# Create Instructions.txt
+cat << EOF > ~/MacOS-Theme/Instructions.txt
+# Mac OS theme installation instructions.
+1. Run ./installer.sh in ~/MacOS-Theme folder.
+2. Open terminal from the ~/MacOS-Theme folder.
+3. Go to ~/MacOS-Theme/WhiteSur-gtk-theme by "cd WhiteSur-gtk-theme" using terminal.
+4. In terminal type "./install.sh -t all -N glassy -s 220" to install the theme.
+5. Then type "sudo ./tweaks.sh -g" to apply the tweaks.
+6. Go to ~/MacOS-Theme/WhiteSur-icon-theme by "cd WhiteSur-icon-theme" using terminal.
+7. In terminal type "./install.sh -b -t all" to install the icons.
+8. Go to ~/MacOS-Theme/WhiteSur-wallpapers by "cd WhiteSur-wallpapers" using terminal.
+9. In terminal type "./install.sh" to install the wallpaper.
+10. Then in terminal type "./install-wallpapers.sh" to install the wallpaper.
+11. Then type "sudo ./install-gnome-backgrounds.sh" to install the wallpaper.
+
+# Preffered extensions
+1. User Themes by fmuellner
+2. 
+
+EOF
+echo
+echo "Instructions file generated Successfully"
 sleep 60
 exit
