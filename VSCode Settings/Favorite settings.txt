@@ -1,16 +1,7 @@
-trim_path() {
-    # Replace with the path you want to trim.
-    # To set or change paths for trimming, modify the pattern and replacement in the following line:
-    # Usage: trimmed_path=$(trim_path "path_to_trim")
-    # Example: trimmed_path=$(trim_path "/home/sudeepta/Ubuntu-Owner/GitHub/Projects/MyProject")
-    local trimmed_path="${PWD/\/home\/sudeepta\/Ubuntu-Owner\/GitHub\//}"
-    echo "$trimmed_path"
-}
+# Truncate the path in the prompt
+PS1='${debian_chroot:+($debian_chroot)}\u@\h:${BLUE} \W${RESET_COLOR}\$ '
 
-# Color codes
-RESET_COLOR="\[\e[1;0m\]"
-GREEN="\[\e[1;32m\]"
-BLUE="\[\e[1;34m\]"
-
-# PS1 with color
-# Check if we are inside VS Code's integrated terminal
+# Define color codes
+RESET_COLOR='\[\033[0m\]'
+GREEN='\[\033[0;32m\]'
+BLUE='\[\033[0;34m\]

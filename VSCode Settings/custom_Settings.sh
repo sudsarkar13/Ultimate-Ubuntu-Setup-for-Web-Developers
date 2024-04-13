@@ -1,18 +1,10 @@
 #!/bin/bash
 
-# Define the trim_path function
-trim_path() {
-    local path=$1
-    local trimmed_path=${path/#$HOME/\~}  # Trim the home directory part of the path
-    echo $trimmed_path
-}
+# Define the desired format
+format="\u@\h:\w"
 
-# Define color codes
-RESET_COLOR='\033[0m'
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
+# Append the command to trim the bash path to $PWD with the desired format to ~/.bashrc
+echo "export PS1=\"\$(echo -n \$format)\"" >> ~/.bashrc
 
-# Customize the terminal prompt
-PS1="\[$GREEN\]\u@\h \[$BLUE\]\$(trim_path \w) \[$RESET_COLOR\]\$ "
-
-# You can add more commands or functionalities to the script as needed
+# Source the updated ~/.bashrc to apply the changes immediately
+source ~/.bashrc
