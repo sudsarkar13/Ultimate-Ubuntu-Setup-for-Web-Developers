@@ -44,5 +44,5 @@ EOF
 chmod +x ~/MacOS-Theme/installer.sh
 echo
 echo "Installation script created"
-sleep 180
+sleep 60
 exit
