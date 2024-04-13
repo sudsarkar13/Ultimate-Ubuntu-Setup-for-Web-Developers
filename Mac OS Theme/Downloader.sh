@@ -68,7 +68,9 @@ cat << EOF > ~/MacOS-Theme/Instructions.txt
 
 For this effect to work go to terminal and type "gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'"
 
-5. 
+5. Emoji Copy by FelipeFTN 
+6. Clipboard Indicator by Tudmotu
+7. Net speed Simplified by Prateek SU
 
 EOF
 echo
