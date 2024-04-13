@@ -1,5 +1,5 @@
 # Truncate the path in the prompt
-PS1='\[\e[1;32m\]${debian_chroot:+($debian_chroot)}\u@\h: \[\e[1;34m\]\W \[\e[1;0m\]$ '
+PS1='\[\e[1;32m\]${debian_chroot:+($debian_chroot)}\u@\h:\[\e[1;34m\]\W\[\e[1;0m\]$ '
 
 # Color codes
 RESET_COLOR="\[\e[1;0m\]"
