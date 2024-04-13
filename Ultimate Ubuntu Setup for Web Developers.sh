@@ -86,8 +86,6 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 # Fix any dependency issues
 sudo apt --fix-broken install -y
 echo "Google Chrome installation completed."
-# Clean up
-sudo apt autoremove -y
 else
 echo "Google Chrome is already installed. Skipping installation."
 fi
