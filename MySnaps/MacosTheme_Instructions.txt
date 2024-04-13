@@ -1,0 +1,14 @@
+# Mac OS theme installation instructions
+
+git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
+
+cd WhiteSur-gtk-theme/
+
+./install.sh --help
+
+./install.sh -m -t all -l -c Dark -N stable --normal --round -i ubuntu
+
+sudo ./tweaks.sh -g
+
+sudo ./tweaks.sh -f
+
