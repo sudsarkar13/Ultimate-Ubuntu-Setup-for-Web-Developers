@@ -24,35 +24,25 @@ echo "Download Complete"
 echo
 echo "Export Installer script to ~/MacOS-Theme"
 echo
-
+sleep 5
+# Creating the installation script of required packages and extesion manager
+echo "Please wait while the installation script is being created..."
 # Export installer script
 cat << EOF > ~/MacOS-Theme/installer.sh
 #!/bin/bash
 
-# Install macOs themes for Ubuntu
 # Usage: ./installer.sh
-
-# Install gtk themes
-cd WhiteSur-gtk-theme/
-./install.sh -m -t all -l -c Dark -N stable --normal --round -i ubuntu
-cd ..
-
-# Install icon themes
-cd WhiteSur-icon-theme/
-./install.sh
-cd ..
-
-# Install wallpapers
-cd WhiteSur-wallpapers/
-for i in */ ; do
-  echo "Installing wallpaper: $i"
-  gsettings set org.gnome.desktop.background picture-uri "file://$PWD/$i/$(ls $i | shuf -n1)"
-done
-cd ..
-
-echo "Installation Complete"
+echo "Installing required packages and extension manager..."
+sudo apt-get install -y gnome-tweaks gnome-shell-extension-manager
+echo
+sudo ubuntu-drivers autoinstall
+echo
+sleep 10
+exit
 
 EOF
-
 chmod +x ~/MacOS-Theme/installer.sh
 echo
+echo "Installation script created"
+sleep 180
+exit
