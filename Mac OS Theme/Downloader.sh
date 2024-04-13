@@ -62,7 +62,13 @@ cat << EOF > ~/MacOS-Theme/Instructions.txt
 
 # Preffered extensions
 1. User Themes by fmuellner
-2. 
+2. Blur my Shell by aunetx
+3. Apps Menu by fmuellner
+4. Compiz alike magic lamp effect by hermes83
+
+For this effect to work go to terminal and type "gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'"
+
+5. 
 
 EOF
 echo
