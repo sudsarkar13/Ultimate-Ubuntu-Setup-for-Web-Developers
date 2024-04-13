@@ -2,10 +2,8 @@
 PS1='${debian_chroot:+($debian_chroot)}\u@\h:${BLUE}\W${RESET_COLOR}\$ '
 
 # Color codes
-RESET_COLOR="\[\e[1;0m\]"
-GREEN="\[\e[1;32m\]"
-BLUE="\[\e[1;34m\]"
-
+RESET_COLOR="\[\033[0m\]"
+GREEN="\[\033[1;32m\]"
+BLUE="\[\033[1;34m\]"
 
 # PS1 with color
-# Check if we are inside VS Code's integrated terminal
