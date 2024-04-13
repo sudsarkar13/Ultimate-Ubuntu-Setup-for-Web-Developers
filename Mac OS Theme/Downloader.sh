@@ -68,8 +68,6 @@ cat << EOF > ~/MacOS-Theme/Instructions.txt
 
 For this effect to work go to terminal and type "gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'"
 
-5. 
-
 EOF
 echo
 echo "Instructions file generated Successfully"
