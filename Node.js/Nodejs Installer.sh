@@ -47,12 +47,12 @@ sleep 5
 echo "Checking nodejs is installed or not..."
 if command -v node &> /dev/null
 then
-    echo "nodejs is already installed"
-    echo "Skipping nodejs installation"
+echo "nodejs is already installed"
+echo "Skipping nodejs installation"
 else
-    echo "nodejs is not installed"
-    echo "Installing nodejs..."
-    nvm install node
+echo "nodejs is not installed"
+echo "Installing nodejs..."
+nvm install node
 fi
 
 echo "Installation completed."
@@ -69,14 +69,7 @@ else
     echo "Installing npm..."
     nvm install-latest-npm
 fi
-
 echo "Installation completed."
-echo
-# Auto clear the unrequired install files
-echo "Clearing the unrequired install files..."
-sudo apt-get autoremove -y
-sudo apt-get autoclean -y
-echo "Unrequired install files have been cleared."
 echo
 sleep 5
 echo "Setup completed. Happy coding!"
