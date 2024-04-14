@@ -60,10 +60,6 @@ else
 fi
 echo "Installation completed."
 sleep 5
-# Auto clear the unrequired install files
-echo "Clearing the unrequired install files..."
-sudo apt-get autoremove -y
-sudo apt-get autoclean -y
 echo "Unrequired install files have been cleared."
 echo
 sleep 5
