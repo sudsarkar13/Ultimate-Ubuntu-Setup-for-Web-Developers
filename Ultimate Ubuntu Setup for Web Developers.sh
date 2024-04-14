@@ -67,6 +67,18 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 # To undo the action
 # gsettings reset org.gnome.shell.extensions.dash-to-dock click-action
 echo
+echo "To undo the action type: 'gsettings reset org.gnome.shell.extensions.dash-to-dock click-action' in terminal"
+echo
+# For installation requirement we need gdebi-core
+echo "Installing requirement (gdebi)..."
+echo
+sudo apt-get install gdebi-core
+echo
+echo "Verifying installation..."
+sudo gdebi --version
+echo "Installing gdebi complete"
+echo
+echo ""
 # Installing Google Chrome
 if ! command -v google-chrome &> /dev/null; then
 echo "Google Chrome is not installed. Proceeding with installation..."
@@ -82,7 +94,7 @@ echo "Installing Google Chrome..."
 sudo apt update
 sudo apt install -y libappindicator3-1 libindicator7
 # Install the downloaded .deb package
-sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo gdebi google-chrome-stable_current_amd64.deb
 # Fix any dependency issues
 sudo apt --fix-broken install -y
 echo "Google Chrome installation completed."
