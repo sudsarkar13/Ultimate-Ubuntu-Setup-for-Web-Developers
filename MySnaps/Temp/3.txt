@@ -1,3 +1,0 @@
-For ~/Mac-OS-Theme/WhiteSur-gtk-theme
-
-./install.sh -m -t all -s 220 -N -l -HD 
