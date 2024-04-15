@@ -52,7 +52,7 @@ echo "Skipping nodejs installation"
 else
 echo "nodejs is not installed"
 echo "Installing nodejs..."
-nvm install node
+nvm install --lts
 fi
 
 echo "Installation completed."
@@ -62,12 +62,12 @@ sleep 5
 echo "Checking npm is installed or not..."
 if command -v npm &> /dev/null
 then
-    echo "npm is already installed"
-    echo "Skipping npm installation"
+echo "npm is already installed"
+echo "Skipping npm installation"
 else
-    echo "npm is not installed"
-    echo "Installing npm..."
-    nvm install-latest-npm
+echo "npm is not installed"
+echo "Installing npm..."
+nvm install-latest-npm
 fi
 echo "Installation completed."
 echo
