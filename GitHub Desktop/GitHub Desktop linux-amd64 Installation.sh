@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# File to store logs
+LOG_FILE="logs.txt"
+
+# Remove the existing log file if it exists
+rm -f $LOG_FILE
+
+# Redirect stdout and stderr to a new log file
+exec > >(tee $LOG_FILE)
+exec 2> >(tee $LOG_FILE >&2)
+
 # Setup tested on Ubuntu 22.04.3 LTS Release: 22.04 Codename: jammy
 echo "This installation script is created & tested in Ubuntu 22.04.3 LTS Release: 22.04 Codename: jammy by Sudeepta Sarkar on 02/10/2023 i.e. 2nd October 2023"
 sleep 3
