@@ -71,6 +71,7 @@ For this effect to work go to terminal and type "gsettings set org.gnome.shell.e
 5. Emoji Copy by FelipeFTN 
 6. Clipboard Indicator by Tudmotu
 7. Net speed Simplified by Prateek SU
+8. Alphabetical App Grid by Stuart Hayhurst
 
 EOF
 echo
