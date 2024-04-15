@@ -1,4 +1,15 @@
 #!/bin/bash
+
+# File to store logs
+LOG_FILE="logs.txt"
+
+# Remove the existing log file if it exists
+rm -f $LOG_FILE
+
+# Redirect stdout and stderr to a new log file
+exec > >(tee $LOG_FILE)
+exec 2> >(tee $LOG_FILE >&2)
+
 # Script to set up a new Ubuntu desktop for Web Developers.
 
 # Setup tested on Ubuntu 22.04.3 LTS Release: 22.04 Codename: jammy
