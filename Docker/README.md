@@ -13,3 +13,5 @@ Please use the stable official method to install Docker i.e. `Docker_Install_APT
 This script is obtained from Docker official website and is the recommended method for installing Docker on Ubuntu systems.
 
 Instructions on how to use this script can be found in the script itself.
+
+Use `Docker_Install.sh` at your own risk.
