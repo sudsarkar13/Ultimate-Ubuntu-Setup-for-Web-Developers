@@ -24,11 +24,6 @@ echo
 echo "Installing Docker Packages..."
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 echo
-
-# Allow the current user to use Docker without needing root privileges
-# By adding them to the 'docker' group
-sudo usermod -aG docker $USER
-echo
 echo "Docker installation complete"
 
 # To check if Docker is installed and working successfully
@@ -38,5 +33,8 @@ echo
 docker run hello-world
 echo
 echo "Docker is installed and working successfully"
+echo
+echo "Post installation steps are on the official docs: https://docs.docker.com/desktop/install/ubuntu/"
+xdg-open "https://docs.docker.com/desktop/install/ubuntu/"
 sleep 60
 exit
