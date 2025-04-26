@@ -12,11 +12,11 @@ exec 2> >(tee $LOG_FILE >&2)
 
 # Check if Flatpak is installed
 if command -v flatpak &> /dev/null; then
-    # Flatpak is already installed
-    echo "Flatpak is already installed. Version:"
-    flatpak --version
-    sleep 2.5
-    exit 0
+  # Flatpak is already installed
+  echo "Flatpak is already installed. Version:"
+  flatpak --version
+  sleep 2.5
+  exit 0
 fi
 
 # Install Flatpak
