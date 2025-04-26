@@ -1,0 +1,34 @@
+{
+  "name": "ultimate-ubuntu-setup-for-web-developers",
+  "version": "1.0.4",
+  "description": "This script setup tool has various set of programs that can be useful to a web developer while switching from windows to ubuntu, very useful for beginners as well as advanced level ubuntu users.",
+  "keywords": [
+    "shellscript",
+    "setup",
+    "ubuntu",
+    "full-setup",
+    "easy-install",
+    "lazy-script"
+  ],
+  "homepage": "https://github.com/sudsarkar13/Ultimate-Ubuntu-Setup-for-Web-Developers#readme",
+  "bugs": {
+    "url": "https://github.com/sudsarkar13/Ultimate-Ubuntu-Setup-for-Web-Developers/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudsarkar13/Ultimate-Ubuntu-Setup-for-Web-Developers.git"
+  },
+  "license": "ISC",
+  "author": "Sudeepta Sarkar",
+  "type": "module",
+  "main": "Ultimate Ubuntu Setup for Web Developers.sh",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write **/*.sh"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "prettier-plugin-sh": "^0.17.2"
+  },
+  "packageManager": "yarn@4.9.1"
+}
