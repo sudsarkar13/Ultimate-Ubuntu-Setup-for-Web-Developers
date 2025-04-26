@@ -183,14 +183,15 @@ cat << EOF > ~/MacOS-Theme/Instructions.txt
 1. Run ./installer.sh in ~/MacOS-Theme folder.
 2. Open terminal from the ~/MacOS-Theme folder.
 3. Go to ~/MacOS-Theme/WhiteSur-gtk-theme by "cd WhiteSur-gtk-theme" using terminal.
-4. In terminal type "./install.sh -t all -N glassy -s 220" to install the theme.
-5. Then type "sudo ./tweaks.sh -g" to apply the tweaks.
+4. In terminal type "./install.sh -o normal -a normal -t blue -s standard -m -N glassy -l -f -HD --round --shell -i apple -sf" to install the theme.
+5. Then type "./tweaks.sh -d" to apply the tweaks.
 6. Go to ~/MacOS-Theme/WhiteSur-icon-theme by "cd WhiteSur-icon-theme" using terminal.
 7. In terminal type "./install.sh -b -t all" to install the icons.
 8. Go to ~/MacOS-Theme/WhiteSur-wallpapers by "cd WhiteSur-wallpapers" using terminal.
-9. In terminal type "./install.sh" to install the wallpaper.
-10. Then in terminal type "./install-wallpapers.sh" to install the wallpaper.
-11. Then type "sudo ./install-gnome-backgrounds.sh" to install the wallpaper.
+9. In terminal type "./install-wallpapers.sh -s 4k" to install the wallpaper.
+10. Then in terminal type "./install-gnome-backgrounds.sh -s 4k" to install the wallpaper.
+11. Go to ~/MacOS-Theme/WhiteSur-cursors by "cd WhiteSur-cursors" using terminal.
+12. In terminal type "./install.sh" to install the cursor theme.
 
 # Preffered extensions
 1. User Themes by fmuellner
