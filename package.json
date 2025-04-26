@@ -21,7 +21,7 @@
   "license": "ISC",
   "author": "Sudeepta Sarkar",
   "type": "module",
-  "main": "Ultimate Ubuntu Setup for Web Developers.sh",
+  "main": "Installer_Script.sh",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write **/*.sh"

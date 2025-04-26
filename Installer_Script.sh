@@ -16,42 +16,41 @@ exec 2> >(tee $LOG_FILE >&2)
 echo "This installation script is created & tested in Ubuntu 22.04.3 LTS Release: 22.04 Codename: jammy by Sudeepta Sarkar on 02/10/2023 i.e. 2nd October 2023"
 sleep 3
 echo "To know the creator visit https://github.com/sudsarkar13/Ultimate-Ubuntu-Setup-for-Web-Developers"
-xdg-open "https://github.com/sudsarkar13/Ultimate-Ubuntu-Setup-for-Web-Developers" 2>/dev/null &
+xdg-open "https://github.com/sudsarkar13/Ultimate-Ubuntu-Setup-for-Web-Developers" 2> /dev/null &
 sleep 10
 echo
 echo "Setup tested on Ubuntu 22.04.3 LTS Release: 22.04 Codename: jammy and as well as it will be updated accordingly with the response."
 sleep 2
 
 # Welcome to the Ultimate Ubuntu setup.
-Your_Name=$(getent passwd $(whoami) | cut -d ':' -f 5 | cut -d ',' -f 1)  # Get the full name of the current user
+Your_Name=$(getent passwd $(whoami) | cut -d ':' -f 5 | cut -d ',' -f 1) # Get the full name of the current user
 echo "Welcome to the Ultimate Ubuntu setup \"$Your_Name\""
 echo "To continue with the setup you need a high-speed internet connection"
-while true; do 
-echo -n "So, are you ready to begin with the setup? (Y/N): "
-read U_Input  # Corrected the variable name here
+while true; do
+  echo -n "So, are you ready to begin with the setup? (Y/N): "
+  read U_Input # Corrected the variable name here
 
-# Convert the input to uppercase
-U_Input=$(echo "$U_Input" | tr '[:lower:]' '[:upper:]')
-    
-if [[ "$U_Input" == "Y" ]]; then
-echo "Starting the setup..."
-# Add your setup steps here or below
+  # Convert the input to uppercase
+  U_Input=$(echo "$U_Input" | tr '[:lower:]' '[:upper:]')
 
+  if [[ "$U_Input" == "Y" ]]; then
+    echo "Starting the setup..."
+    # Add your setup steps here or below
 
-# Loop condition do not interfere here highly restricted area keep in mind developers no need to worry you are allowed to modify the code for your convinience.
-break
-elif [[ "$U_Input" == "N" ]]; then
-echo "Exiting the setup in 10 seconds... "
-sleep 1
-for i in {9..1}; do
-echo -n -e "\rRemaining time: $i"
-done
-echo -e "\rExiting the setup. Goodbye!"
-exit 1
-break
-else
-echo "Invalid input. Please enter 'Y' or 'N'."
-fi
+    # Loop condition do not interfere here highly restricted area keep in mind developers no need to worry you are allowed to modify the code for your convinience.
+    break
+  elif [[ "$U_Input" == "N" ]]; then
+    echo "Exiting the setup in 10 seconds... "
+    sleep 1
+    for i in {9..1}; do
+      echo -n -e "\rRemaining time: $i"
+    done
+    echo -e "\rExiting the setup. Goodbye!"
+    exit 1
+    break
+  else
+    echo "Invalid input. Please enter 'Y' or 'N'."
+  fi
 done
 
 # Installation Procedure beginning from here onwards.
@@ -64,7 +63,7 @@ echo
 sudo timedatectl set-local-rtc 1
 sudo timedatectl set-ntp true
 echo
-# Checks for updates available & upgrades the packages required. 
+# Checks for updates available & upgrades the packages required.
 sudo apt update
 sudo apt upgrade -y
 echo
@@ -92,25 +91,25 @@ echo
 echo ""
 # Installing Google Chrome
 if ! command -v google-chrome &> /dev/null; then
-echo "Google Chrome is not installed. Proceeding with installation..."
-# Check if Google Chrome deb file is downloaded
-if [ ! -f google-chrome-stable_current_amd64.deb ]; then
-echo "Getting google-chrome.deb package file..."
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  echo "Google Chrome is not installed. Proceeding with installation..."
+  # Check if Google Chrome deb file is downloaded
+  if [ ! -f google-chrome-stable_current_amd64.deb ]; then
+    echo "Getting google-chrome.deb package file..."
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  else
+    echo "Google Chrome deb package already downloaded."
+  fi
+  echo "Installing Google Chrome..."
+  # Install dependencies
+  sudo apt update
+  sudo apt install -y libappindicator3-1 libindicator7
+  # Install the downloaded .deb package
+  sudo gdebi google-chrome-stable_current_amd64.deb
+  # Fix any dependency issues
+  sudo apt --fix-broken install -y
+  echo "Google Chrome installation completed."
 else
-echo "Google Chrome deb package already downloaded."
-fi
-echo "Installing Google Chrome..."
-# Install dependencies
-sudo apt update
-sudo apt install -y libappindicator3-1 libindicator7
-# Install the downloaded .deb package
-sudo gdebi google-chrome-stable_current_amd64.deb
-# Fix any dependency issues
-sudo apt --fix-broken install -y
-echo "Google Chrome installation completed."
-else
-echo "Google Chrome is already installed. Skipping installation."
+  echo "Google Chrome is already installed. Skipping installation."
 fi
 echo
 # Preload
