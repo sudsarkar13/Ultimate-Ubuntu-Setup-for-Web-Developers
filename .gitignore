@@ -9,3 +9,10 @@
 /Python --latest/logs.txt
 /Unsnap/logs.txt
 /logs.txt
+
+# node
+node_modules
+
+# lock files
+package-lock.json
+yarn.lock
