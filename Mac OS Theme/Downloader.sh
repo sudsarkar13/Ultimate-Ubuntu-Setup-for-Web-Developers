@@ -13,7 +13,9 @@ exec 2> >(tee $LOG_FILE >&2)
 # Install macOs themes for Ubuntu
 # Usage: ./Downloader.sh
 
-# Download the gtk themes inside Downloads folder
+# Download the gtk MacOs themes for Ubuntu
+echo "Downloading the MacOs themes for Ubuntu..."
+echo
 mkdir -p ~/MacOS-Theme/
 cd ~/MacOS-Theme/
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
@@ -27,9 +29,12 @@ echo
 git clone https://github.com/vinceliuice/WhiteSur-wallpapers.git
 echo "Downloaded WhiteSur-wallpapers"
 echo
+# Download the cursor themes
+git clone https://github.com/vinceliuice/WhiteSur-cursors.git
+echo "Downloaded WhiteSur-cursors"
 echo "Download Complete"
 echo
-echo "Export Installer script to ~/MacOS-Theme"
+echo "Exporting the Installer script to ~/MacOS-Theme"
 echo
 sleep 5
 # Creating the installation script of required packages and extesion manager
@@ -70,25 +75,93 @@ if [[ "$response" == "y" ]]; then
     echo "Installing the theme..."
     sleep 2
     echo
+    echo "Installing the theme into gtk4.0 config for libadwaita in sudo mode..."
+    sudo ./install.sh -o normal -a normal -t blue -s standard -m -N glassy -l -f -HD --round --shell -i apple -sf
+    echo
+    echo "Ignore this warning \"Do not run '--libadwaita' option with sudo!\""
+    sleep 5
+    echo
     echo "Installing the theme into gtk4.0 config for libadwaita..."
     ./install.sh -o normal -a normal -t blue -s standard -m -N glassy -l -f -HD --round --shell -i apple -sf
     echo
     echo "Theme installation for gtk4.0 config for libadwaita is complete"
     echo
-    echo "Installing theme tweaks..."
     sleep 2
-    echo
     echo "Applying gdm theme tweaks..."
     echo
     echo "Running ./tweaks.sh ..."
-    sleep 5
-    sudo ./tweaks.sh -g
-    ./tweaks.sh -c dark -t blue -s standard -d
     echo
-    echo "Applying tweaks in the root..."
-    sudo ./tweaks.sh -c dark -t blue -s standard -d
+    echo "Running in sudo mode..."
+    echo
+    sudo ./tweaks.sh -d
+    sleep 5
+    echo
+    echo "Running in normal mode..."
+    ./tweaks.sh -d
     echo
     echo "Tweaks applied successfully"
+    echo
+    echo "Switching to WhiteSur-icon-theme directory..."
+    cd ~/MacOS-Theme/WhiteSur-icon-theme
+    echo
+    echo "Installing the icons in sudo mode..."
+    sleep 2
+    echo
+    echo "Running the icon installation script..."
+    sudo ./install.sh -b -t all
+    echo
+    echo "Installing the icons in the normal mode..."
+    sleep 2
+    echo
+    echo "Running the icon installation script..."
+    ./install.sh -b -t all
+    echo
+    echo "Icon installation complete."
+    echo
+    sleep 2
+    echo "Switching to WhiteSur-wallpapers directory..."
+    cd ~/MacOS-Theme/WhiteSur-wallpapers
+    echo
+    echo "Installing the wallpaper in sudo mode..."
+    sleep 2
+    echo
+    echo "Running the wallpaper installation script..."
+    sudo ./install-wallpapers.sh -s 4k
+    echo
+    echo "Installing the wallpaper in the normal mode..."
+    sleep 2
+    echo
+    echo "Running the wallpaper installation script..."
+    ./install-wallpapers.sh -s 4k
+    echo
+    echo "Wallpaper installation complete."
+    echo
+    echo "Switching to WhiteSur-cursors directory..."
+    cd ~/MacOS-Theme/WhiteSur-cursors
+    echo
+    echo "Installing the cursor theme in sudo mode..."
+    sleep 2
+    sudo ./install.sh
+    echo
+    echo "Installing the cursor theme in the normal mode..."
+    sleep 2
+    ./install.sh
+    echo
+    echo "Setup completed."
+    sleep 5
+    echo "Installation completed successfully."
+    sleep 5
+    echo
+    echo -n "Quitting in 10 seconds..."
+    for i in {10..1}; do
+        echo -ne "\rQuitting in $i seconds..."
+        sleep 1
+    done
+    echo -ne "\rQuitting now!          \n"
+    echo
+    echo "Please logOut/restart your system to apply the changes."
+    sleep 5
+    exit
 else
     echo
     echo "Installation aborted."
@@ -105,7 +178,8 @@ echo "Installation script created"
 
 # Create Instructions.txt
 cat << EOF > ~/MacOS-Theme/Instructions.txt
-# Mac OS theme installation instructions.
+# Mac OS theme installation instructions if you want to install the theme manually.
+
 1. Run ./installer.sh in ~/MacOS-Theme folder.
 2. Open terminal from the ~/MacOS-Theme folder.
 3. Go to ~/MacOS-Theme/WhiteSur-gtk-theme by "cd WhiteSur-gtk-theme" using terminal.
