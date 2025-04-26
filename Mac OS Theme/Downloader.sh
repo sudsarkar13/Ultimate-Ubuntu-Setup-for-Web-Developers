@@ -37,7 +37,7 @@ echo
 echo "Exporting the Installer script to ~/MacOS-Theme"
 echo
 sleep 5
-# Creating the installation script of required packages and extesion manager
+# Creating the installation script of required packages
 echo "Please wait while the installation script is being created..."
 # Export installer script
 cat << EOF > ~/MacOS-Theme/installer.sh
@@ -194,20 +194,87 @@ cat << EOF > ~/MacOS-Theme/Instructions.txt
 12. In terminal type "./install.sh" to install the cursor theme.
 
 # Preffered extensions
-1. User Themes by fmuellner
-2. Blur my Shell by aunetx
-3. Apps Menu by fmuellner
-4. Compiz alike magic lamp effect by hermes83
+1. Alphabetical App Grid by Stuart Hayhurst
+2. Apps Menu by fmuellner
+3. Blur my Shell by aunetx
+4. Clipboard Indicator by Tudmotu
+5. Compiz alike magic lamp effect by hermes83
     For this effect to work go to terminal and type "gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'"
+6. Dash to Dock by michele_g
+7. Emoji Copy by FelipeFTN
+8. Extension List by grroot
+9. Net speed Simplified by Prateek SU
+10. Search Light by icedman
+11. User Themes by fmuellner
 
-5. Emoji Copy by FelipeFTN 
-6. Clipboard Indicator by Tudmotu
-7. Net speed Simplified by Prateek SU
-8. Alphabetical App Grid by Stuart Hayhurst
-9. Extension List by grroot
-
+# Extension Installer
+Note: If you want to install all these extensions through an installer, run the script "Extension_Installer.sh" in the same folder.
 EOF
 echo
 echo "Instructions file generated Successfully"
+echo
+# Create Extension_Installer.sh
+echo "Exporting the extension installer script..."
+cat << EOF > ~/MacOS-Theme/Extension_Installer.sh
+#!/bin/bash
+
+# File to store logs
+LOG_FILE="logs.txt"
+
+# Remove the existing log file if it exists
+rm -f $LOG_FILE
+
+# Redirect stdout and stderr to a new log file
+exec > >(tee $LOG_FILE)
+exec 2> >(tee $LOG_FILE >&2)
+echo "Log file created at $LOG_FILE"
+
+# Usage: ./Extension_Installer.sh
+echo
+echo "Installing extensions through flatpak..."
+echo
+echo "Installing Alphabetical App Grid..."
+flatpak install flathub com.github.alphabetical-app-grid.AlphabeticalAppGrid
+echo
+echo "Installing Apps Menu..."
+flatpak install flathub com.github.fmuellner.AppsMenu
+echo
+echo "Installing Blur my Shell..."
+flatpak install flathub com.github.aunetx.BlurMyShell
+echo
+echo "Installing Clipboard Indicator..."
+flatpak install flathub com.github.tudmotu.clipboard-indicator
+echo
+echo "Installing Compiz alike magic lamp effect..."
+flatpak install flathub com.github.hermes83.compiz-alike-magic-lamp-effect
+echo
+echo "Installing Dash to Dock..."
+flatpak install flathub com.github.micheleg/dash-to-dock
+echo
+echo "Installing Emoji Copy..."
+flatpak install flathub com.github.FelipeFTN.EmojiCopy
+echo
+echo "Installing Extension List..."
+flatpak install flathub com.github.grroot.ExtensionList
+echo
+echo "Installing Net speed Simplified..."
+flatpak install flathub com.github.PrateekSU.net-speed-simplified
+echo
+echo "Installing Search Light..."
+flatpak install flathub com.github.icedman2000.searchlight
+echo
+echo "Installing User Themes..."
+flatpak install flathub com.github.fmuellner.UserThemes
+echo
+echo "Extensions installation completed."
+echo
+echo "Installation of all extensions is complete. Please check the logs for details."
+echo
+echo "Log file created at $LOG_FILE"
+echo
+exit 10
+EOF
+echo
+echo "Extension_Installer.sh created Successfully"
 sleep 30
 exit
